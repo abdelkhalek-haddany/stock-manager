@@ -1,66 +1,145 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Stock Manager - Real-Time Notifications and Performance Optimization
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 📖 Description
 
-## About Laravel
+Stock Manager is a Laravel application designed to manage product stock in a warehouse. It features **real-time notifications** when stock reaches or falls below a critical threshold. The app leverages **Pusher** and **Laravel Echo** for real-time updates and uses **eager loading** to optimize SQL queries, ensuring high performance.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🚀 Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Core Functionalities
 
-## Learning Laravel
+-   **CRUD Operations**:
+    -   Manage stock products with attributes like:
+        -   **Name**
+        -   **Quantity in Stock**
+        -   **Minimum Stock Level**
+-   **Real-Time Notification System**:
+    -   Automatically sends notifications when:
+        -   Stock reaches or drops below the minimum threshold.
+    -   Powered by **Pusher** and **Laravel Echo**.
+-   **Performance Optimization**:
+    -   Uses **eager loading** to minimize database queries and improve performance.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Bonus Features
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+-   **Email Notifications**:
+    -   Sends email alerts for critical stock levels.
+-   **Admin Dashboard**:
+    -   Manage products and monitor statistics in real-time.
+-   **Export to Excel**:
+    -   Download stock data as an Excel file.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 📥 Installation
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Prerequisites
 
-### Premium Partners
+Ensure you have the following installed:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+-   PHP >= 8.0
+-   Composer
+-   Node.js and npm
+-   MySQL (or SQLite for testing)
+-   Pusher credentials (sign up at [Pusher](https://pusher.com))
 
-## Contributing
+### Steps
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1. **Clone the Repository**:
 
-## Code of Conduct
+    ```bash
+    git clone https://github.com/abdelkhalek-haddany/stock-manager.git
+    cd stock-manager
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    ## 📥 Installation
 
-## Security Vulnerabilities
+### Prerequisites
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Ensure you have the following installed:
 
-## License
+-   PHP >= 8.0
+-   Composer
+-   Node.js and npm
+-   MySQL (or SQLite for testing)
+-   Pusher credentials (sign up at [Pusher](https://pusher.com))
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Steps
+
+1. **Install Dependencies**:
+    ```bash
+    composer install
+    npm install && npm run dev
+    ```
+
+````
+2. **Setup Environment Variables**:
+   - Copy the example `.env` file to create your environment configuration:
+     ```bash
+     cp .env.example .env
+     ```
+   - Open the `.env` file and configure the following variables:
+
+   #### Database Configuration
+   Replace with your database details:
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=your_database_name
+   DB_USERNAME=your_database_user
+   DB_PASSWORD=your_database_password
+````
+
+3. **Pusher Configuration**:
+
+    - To enable real-time notifications, you need to set up Pusher. Follow these steps:
+
+        1. Go to [Pusher's website](https://pusher.com) and create a free account.
+        2. Create a new app in your Pusher dashboard:
+            - Select the "Channels" product.
+            - Choose a name for your app, like `StockManager`.
+            - Select your app cluster (e.g., `mt1`).
+            - Leave other settings as default and create the app.
+        3. Copy the **App ID**, **Key**, **Secret**, and **Cluster** from the app's dashboard.
+
+    - Add these credentials to the `.env` file in your project:
+
+        ```env
+        BROADCAST_DRIVER=pusher
+        PUSHER_APP_ID=your_pusher_app_id
+        PUSHER_APP_KEY=your_pusher_app_key
+        PUSHER_APP_SECRET=your_pusher_app_secret
+        PUSHER_APP_CLUSTER=your_pusher_app_cluster
+        ```
+
+    - Make sure broadcasting is set to use Pusher:
+
+        ```env
+        BROADCAST_DRIVER=pusher
+        ```
+
+    - Run the following command to clear the configuration cache and apply the updated settings:
+        ```bash
+        php artisan config:cache
+        ```
+
+4. **Run Laravel Echo Server** _(Optional)_:
+    - If you're using **Laravel Echo Server** instead of directly using Pusher:
+        1. Install the Laravel Echo Server globally:
+            ```bash
+            npm install -g laravel-echo-server
+            ```
+        2. Initialize the server in your project:
+            ```bash
+            laravel-echo-server init
+            ```
+        3. Configure the `laravel-echo-server.json` file based on your `.env` setup.
+        4. Run the Echo server:
+            ```bash
+            laravel-echo-server start
+            ```
+
+With this setup, your app is ready to broadcast notifications using Pusher or Laravel Echo!
