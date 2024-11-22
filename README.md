@@ -74,8 +74,8 @@ Ensure you have the following installed:
     npm install && npm run dev
     ```
 
-````
-2. **Setup Environment Variables**:
+
+2. **Setup Environment Variables**
    - Copy the example `.env` file to create your environment configuration:
      ```bash
      cp .env.example .env
@@ -91,7 +91,7 @@ Ensure you have the following installed:
    DB_DATABASE=your_database_name
    DB_USERNAME=your_database_user
    DB_PASSWORD=your_database_password
-````
+   ```
 
 3. **Pusher Configuration**:
 

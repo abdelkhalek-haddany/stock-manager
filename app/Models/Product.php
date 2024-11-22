@@ -9,7 +9,7 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'quantity_in_stock', 'minimum_stock'];
+    protected $guarded = [];
 
     public function notifications()
     {
