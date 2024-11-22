@@ -28,11 +28,13 @@ class AuthController extends Controller
 
         $token = Auth::login($user);
 
-        return response()->json([
-            'access_token' => $token,
-            'token_type' => 'bearer',
-            'expires_in' => JWTAuth::factory()->getTTL() * 60
-        ]);
+        return redirect()->route('products.index');
+
+        // return response()->json([
+        //     'access_token' => $token,
+        //     'token_type' => 'bearer',
+        //     'expires_in' => JWTAuth::factory()->getTTL() * 60
+        // ]);
     }
 
     // User login
@@ -58,7 +60,7 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout();
-
+        return redirect()->route('login');
         return response()->json(['message' => 'Successfully logged out']);
     }
 
