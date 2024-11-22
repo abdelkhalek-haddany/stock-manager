@@ -1,8 +1,10 @@
 <?php
 
+use App\Exports\ProductsExport;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+use Maatwebsite\Excel\Facades\Excel;
 
 Route::get('/', function () {
     return view('welcome');
@@ -21,3 +23,7 @@ Route::post('register', [AuthController::class, 'register'])->name('auth.registe
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::resource('products', ProductController::class)->middleware('auth');
+
+Route::get('/export-products', function () {
+    return Excel::download(new ProductsExport, 'products.xlsx');
+})->name('export.products');

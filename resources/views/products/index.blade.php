@@ -9,6 +9,9 @@
                     <a href="{{ route('products.create') }}" class="btn btn-success">
                         <i class="bi bi-plus-circle"></i> Add New Product
                     </a>
+                    <a href="{{ route('export.products') }}" class="btn btn-success">
+                        Export Products as Excel
+                    </a>
                 </div>
                 <div class="card shadow-sm">
                     <div class="card-header bg-primary text-white">

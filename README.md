@@ -2,7 +2,7 @@
 
 ## 📖 Description
 
-Stock Manager is a Laravel application designed to manage product stock in a warehouse. It features **real-time notifications** when stock reaches or falls below a critical threshold. The app leverages **Pusher** and **Laravel Echo** for real-time updates and uses **eager loading** to optimize SQL queries, ensuring high performance.
+Stock Manager is a Laravel application designed to manage product stock in a warehouse. It features **real-time notifications** when stock reaches or falls below a critical threshold. The app leverages **Pusher** and **Laravel Echo** for real-time updates and using **JWT** for authentication and uses **eager loading** to optimize SQL queries, ensuring high performance.
 
 ---
 
